@@ -36,6 +36,7 @@ jobs:
       go-version: ${{ github.event.inputs.go-version }}
       cleanup-disk: true
       runs-on: ubuntu-latest-large # oracle-vm-16cpu-64gb-x86-64
+      mirror-to-upbound-registry: false
     secrets:
       GHCR_PAT: ${{ secrets.GITHUB_TOKEN }}
       # XPKG_UPBOUND_TOKEN: ${{ secrets.XPKG_UPBOUND_TOKEN }}
