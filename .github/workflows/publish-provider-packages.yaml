@@ -41,5 +41,5 @@ jobs:
       runs-on: ${{ inputs.runs-on }}
       mirror-to-upbound-registry: false
     secrets:
-      GHCR_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GHCR_PAT: ${{ secrets.GH_CLONE_REPO_PAT }}
       # XPKG_UPBOUND_TOKEN: ${{ secrets.XPKG_UPBOUND_TOKEN }}
