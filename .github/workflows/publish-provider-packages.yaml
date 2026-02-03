@@ -28,6 +28,7 @@ on:
         default: ubuntu-latest
 
 jobs:
+  runs-on: ${{ inputs.runner }}
   publish-provider-packages:
     uses: crossplane-contrib/provider-workflows/.github/workflows/publish-provider-family.yml@main
     with:
