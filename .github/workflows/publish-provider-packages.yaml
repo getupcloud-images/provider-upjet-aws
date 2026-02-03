@@ -29,7 +29,8 @@ on:
 
 jobs:
   publish-provider-packages:
-    runs-on: ${{ inputs.runner }}
+    name: Publish Provider Packages
+    runs-on: '${{ inputs.runner }}'
     uses: getupcloud-images/provider-workflows/.github/workflows/publish-provider-family.yml@main
     with:
       subpackages: ${{ github.event.inputs.subpackages }}
