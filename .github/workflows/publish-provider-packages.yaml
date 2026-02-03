@@ -23,6 +23,9 @@ on:
         description: 'Go version to use if building needs to be done'
         default: '1.23'
         required: false
+      runner:
+        type: string
+        default: ubuntu-latest
 
 jobs:
   publish-provider-packages:
@@ -35,7 +38,7 @@ jobs:
       version: ${{ github.event.inputs.version }}
       go-version: ${{ github.event.inputs.go-version }}
       cleanup-disk: true
-      runs-on: self-hosted # ubuntu-latest-large # oracle-vm-16cpu-64gb-x86-64
+      runs-on: ${{ inputs.runner }}
       mirror-to-upbound-registry: false
     secrets:
       GHCR_PAT: ${{ secrets.GITHUB_TOKEN }}
