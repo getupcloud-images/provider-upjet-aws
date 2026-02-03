@@ -28,8 +28,8 @@ on:
         default: ubuntu-latest
 
 jobs:
-  runs-on: ${{ inputs.runner }}
   publish-provider-packages:
+    runs-on: ${{ inputs.runner }}
     uses: getupcloud-images/provider-workflows/.github/workflows/publish-provider-family.yml@main
     with:
       subpackages: ${{ github.event.inputs.subpackages }}
